@@ -91,7 +91,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="logo">
-                                <a href="index.html"><img src="/static/assets/images/logotive.png" alt="logo"></a>
+                               <a href="index.html"><img src="/static/assets/images/logotive.png" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-none d-lg-block">
@@ -108,15 +108,15 @@
                                                 <li><a href="{% url 'main:about' %}">biz haqimizda </a></li>
                                                 <li><a href="{% url 'main:profile' %}">Mening Hisobim</a></li>
                                                 <li><a href="wishlist.html">Istaklar Ro'yxati </a></li>
-                                                <li><a href="{% url 'main:sigin' %}">Biz Bilan Bog'lanish</a></li>
-                                                <li><a href="login-register.html">Kirish / Ro'yxatdan O'tish </a></li>
+                                                <li><a href="{% url 'main:contact' %}">Biz Bilan Bog'lanish</a></li>
+                                                <li><a href="{% url 'main:sigin' %}">Kirish / Ro'yxatdan O'tish </a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="blog.html">BLOG</a>
                                         </li>
                                         
-                                        <li><a href="contact-us.html">A'LOQA</a></li>
+                                        <li><a href="{% url 'main:contact' %}">A'LOQA</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -136,16 +136,16 @@
                                     </div>
                                 </div>
                                 <div class="header-action-style">
-                                    <a title="Login Register" href="login-register.html"><i class="pe-7s-user"></i></a>
+                                    <a title="Login Register" href="{% url 'main:sigin' %}"><i class="pe-7s-user"></i></a>
                                 </div>
                                 <div class="header-action-style">
-                                    <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                                    <a title="Wishlist" href="{% url 'main:wishlist' %}"><i class="pe-7s-like"></i></a>
                                 </div>
-                                <div class="header-action-style header-action-cart">
+                                <!-- <div class="header-action-style header-action-cart">
                                     <a class="cart-active" href="#"><i class="pe-7s-shopbag"></i>
                                         <span class="product-count bg-black">01</span>
                                     </a>
-                                </div>
+                                </div> -->
                                 <div class="header-action-style d-block d-lg-none">
                                     <a class="mobile-menu-active-button" href="#"><i class="pe-7s-menu"></i></a>
                                 </div>
