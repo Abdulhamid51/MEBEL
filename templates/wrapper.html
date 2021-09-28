@@ -51,7 +51,7 @@
 <body>
     <div class="main-wrapper main-wrapper-2">
         <header class="header-area header-responsive-padding header-height-1">
-            <div class="header-top d-none d-lg-block bg-gray">
+            <!-- <div class="header-top d-none d-lg-block bg-gray">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-6">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="header-bottom sticky-bar">
                 <div class="container">
                     <div class="row align-items-center">
@@ -98,72 +98,25 @@
                             <div class="main-menu text-center">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">HOME</a>
+                                        <li>
+                                            <a href="/">BOSH SAHIFA</a>
+                                        </li>
+                                        <li><a href="{% url 'main:catalog' %}">KATALOG</a>
+                                        </li>
+                                        <li><a href="#">SAHIFALAR</a>
                                             <ul class="sub-menu-style">
-                                                <li><a href="index.html">Home version 1 </a></li>
-                                                <li><a href="index-2.html">Home version 2</a></li>
-                                                <li><a href="index-3.html">Home version 3</a></li>
-                                                <li><a href="index-4.html">Home version 4</a></li>
-                                                <li><a href="index-5.html">Home version 5</a></li>
-                                                <li><a href="index-6.html">Home version 6</a></li>
-                                                <li><a href="index-7.html">Home version 7</a></li>
-                                                <li><a href="index-8.html">Home version 8</a></li>
+                                                <li><a href="{% url 'main:about' %}">biz haqimizda </a></li>
+                                                <li><a href="{% url 'main:profile' %}">Mening Hisobim</a></li>
+                                                <li><a href="wishlist.html">Istaklar Ro'yxati </a></li>
+                                                <li><a href="{% url 'main:sigin' %}">Biz Bilan Bog'lanish</a></li>
+                                                <li><a href="login-register.html">Kirish / Ro'yxatdan O'tish </a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="shop.html">SHOP</a>
-                                            <ul class="mega-menu-style mega-menu-mrg-1">
-                                                <li>
-                                                    <ul>
-                                                        <li>
-                                                            <a class="dropdown-title" href="#">Shop Layout</a>
-                                                            <ul>
-                                                                <li><a href="shop.html">standard style</a></li>
-                                                                <li><a href="shop-sidebar.html">shop grid sidebar</a></li>
-                                                                <li><a href="shop-list.html">shop list style</a></li>
-                                                                <li><a href="shop-list-sidebar.html">shop list sidebar</a></li>
-                                                                <li><a href="shop-right-sidebar.html">shop right sidebar</a></li>
-                                                                <li><a href="shop-location.html">store location</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-title" href="#">Products Layout</a>
-                                                            <ul>
-                                                                <li><a href="product-details.html">tab style 1</a></li>
-                                                                <li><a href="product-details-2.html">tab style 2</a></li>
-                                                                <li><a href="product-details-gallery.html">gallery style </a></li>
-                                                                <li><a href="product-details-affiliate.html">affiliate style</a></li>
-                                                                <li><a href="product-details-group.html">group style</a></li>
-                                                                <li><a href="product-details-fixed-img.html">fixed image style </a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="shop.html"><img src="/static/assets/images/banner/menu.png" alt=""></a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                        <li>
+                                            <a href="blog.html">BLOG</a>
                                         </li>
-                                        <li><a href="#">PAGES</a>
-                                            <ul class="sub-menu-style">
-                                                <li><a href="about-us.html">about us </a></li>
-                                                <li><a href="cart.html">cart page</a></li>
-                                                <li><a href="checkout.html">checkout </a></li>
-                                                <li><a href="my-account.html">my account</a></li>
-                                                <li><a href="wishlist.html">wishlist </a></li>
-                                                <li><a href="compare.html">compare </a></li>
-                                                <li><a href="contact-us.html">contact us </a></li>
-                                                <li><a href="login-register.html">login / register </a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">BLOG</a>
-                                            <ul class="sub-menu-style">
-                                                <li><a href="blog.html">blog standard </a></li>
-                                                <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                                <li><a href="blog-details.html">blog details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about-us.html">ABOUT</a></li>
-                                        <li><a href="contact-us.html">CONTACT US</a></li>
+                                        
+                                        <li><a href="contact-us.html">A'LOQA</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -320,17 +273,7 @@
                     <div id="mobile-menu" class="slinky-mobile-menu text-left">
                         <ul>
                             <li>
-                                <a href="#">HOME</a>
-                                <ul>
-                                    <li><a href="index.html">Home version 1 </a></li>
-                                    <li><a href="index-2.html">Home version 2</a></li>
-                                    <li><a href="index-3.html">Home version 3</a></li>
-                                    <li><a href="index-4.html">Home version 4</a></li>
-                                    <li><a href="index-5.html">Home version 5</a></li>
-                                    <li><a href="index-6.html">Home version 6</a></li>
-                                    <li><a href="index-7.html">Home version 7</a></li>
-                                    <li><a href="index-8.html">Home version 8</a></li>
-                                </ul>
+                                <a href="/">BOSH SAHIFA</a>
                             </li>
                             <li>
                                 <a href="#">SHOP</a>
@@ -365,7 +308,7 @@
                                     <li><a href="about-us.html">About Us </a></li>
                                     <li><a href="cart.html">Cart Page</a></li>
                                     <li><a href="checkout.html">Checkout </a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
+                                    <li><a href="profile/">My Account</a></li>
                                     <li><a href="wishlist.html">Wishlist </a></li>
                                     <li><a href="compare.html">Compare </a></li>
                                     <li><a href="contact-us.html">Contact us </a></li>
