@@ -4,7 +4,7 @@ from django.db import models
 
 class Category(models.Model):
     title = models.CharField("nomi", max_length=150)
-    slug = models.models.SlugField("slug")
+    slug = models.SlugField("slug")
 
     def __str__(self):
         return self.title
