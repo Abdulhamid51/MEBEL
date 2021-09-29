@@ -41,5 +41,5 @@ class ClientUser(models.Model):
     social_links = models.ManyToManyField(Links, related_name="client", blank=True)
 
     def __str__(self):
-        return self.user
+        return self.link
     

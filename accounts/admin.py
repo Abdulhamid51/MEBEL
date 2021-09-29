@@ -6,4 +6,4 @@ from .models import *
 admin.site.register(Links)
 admin.site.register(Saved)
 admin.site.register(UserProfile)
-# admin.site.register(ClientUser)
+admin.site.register(ClientUser)

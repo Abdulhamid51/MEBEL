@@ -14,7 +14,7 @@ class Images(models.Model):
 
 class Product(models.Model):
     title = models.CharField("title", max_length=150)
-    # owner = models.ForeignKey("accounts.ClientUser", related_name="products", on_delete=models.CASCADE)
+    owner = models.ForeignKey("accounts.ClientUser", related_name="products", on_delete=models.CASCADE)
     link = models.CharField("link", max_length=50, unique=True)
     category = models.ForeignKey(Category, related_name="products", on_delete=models.CASCADE)
     content = models.TextField("tarif")
