@@ -12,4 +12,5 @@ urlpatterns = [
     path("sigin/", views.RegisterctView.as_view(), name="sigin"),
     path("contact/", views.contact, name="contact"),
     path("wishlist/", views.WishlistView.as_view(), name="wishlist"),
+    path("product/<link>", views.detail_product, name="detail_product")
 ]

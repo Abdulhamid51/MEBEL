@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views import View
 from django.contrib import messages
 from.models import *
@@ -6,13 +6,18 @@ from.models import *
 
 class HomeView(View):
     def get(self,request):
-        post = Product.objects.all()[:3].order_by('?')
+        post = Product.objects.all().order_by('?')[:8]
         category = Category.objects.all().order_by('-id')
         context = {
             'post':post,
             'cat':category
         }
         return render(request,'index-2.html', context)
+
+def detail_product(request, link):
+    product = get_object_or_404(Product, link=link)
+    context = {'pro':product}
+    return render(request, 'product-details.html', context)
 
 class CatalogView(View):
     def get(self,request):
