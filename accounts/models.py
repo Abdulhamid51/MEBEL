@@ -22,6 +22,9 @@ class Saved(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, related_name='user_pro', on_delete=models.CASCADE)
     saved = models.OneToOneField(Saved, related_name='saver', on_delete=models.CASCADE, blank=True)
+    address = models.CharField("Manzil", max_length=500,null=True, blank=True)
+    phone = models.CharField('Telefon raqam', max_length=25, null=True, blank=True)
+    telegram = models.CharField('telegram', max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.name

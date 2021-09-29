@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import View
+from django.contrib import messages
+from.models import *
 # Create your views here.
 
 class HomeView(View):
@@ -27,10 +29,24 @@ class WishlistView(View):
     def get(self,request):
         return render(request,'wishlist.html')
 
-class ContactView(View):
-    def get(self,request):
-        return render(request,'contact-us.html')
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        phone = request.POST['phone']
+        message = request.POST['message']
+        Contact.objects.create(
+        name=name,
+        email=email,
+        subject=subject,
+        phone=phone,
+        message=message,
+        ),
+        messages.add_message(request, messages.SUCCESS, 'Tabriklaymiz a\'loqa muofaqiyatli amalga oshirildi tez orada sayit adminlari sizbilan bog\'lanishadi')
+        #bot.send_message(my_id,f"Aloqa xizmatidan xabar bor\nIsmi:  {name}\nTelfon raqami:  {phone}\nEmail:  {email}\n Xabari:  {message}")
+    return render(request,'contact-us.html')
 
 class ProfileView(View):
     def get(self,request):
-        return render(request,'my-account.html')
+        return render(request,'client-profile.html')
