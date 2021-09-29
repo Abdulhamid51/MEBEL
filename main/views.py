@@ -49,4 +49,4 @@ def contact(request):
 
 class ProfileView(View):
     def get(self,request):
-        return render(request,'my-account.html')
+        return render(request,'client-profile.html')

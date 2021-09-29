@@ -14,11 +14,14 @@ class Images(models.Model):
 
 class Product(models.Model):
     title = models.CharField("title", max_length=150)
-    owner = models.ForeignKey("accounts.ClientUser", related_name="products", on_delete=models.CASCADE)
+    # owner = models.ForeignKey("accounts.ClientUser", related_name="products", on_delete=models.CASCADE)
     link = models.CharField("link", max_length=50, unique=True)
     category = models.ForeignKey(Category, related_name="products", on_delete=models.CASCADE)
     content = models.TextField("tarif")
-    images = models.ManyToManyField(Images, related_name="product")
+    img1 = models.ImageField("rasmi1", upload_to='product_images/',blank=True,null=True)
+    img2 = models.ImageField("rasmi2", upload_to='product_images/',blank=True,null=True)
+    img3 = models.ImageField("rasmi3", upload_to='product_images/',blank=True,null=True)
+    img4 = models.ImageField("rasmi4", upload_to='product_images/',blank=True,null=True)
     price = models.PositiveIntegerField("narxi", default=0)
     old_price = models.PositiveIntegerField("eski narxi", default=0)
     for_slider = models.BooleanField("birinchiga")
@@ -35,6 +38,12 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.user
+
+
+class Banner(models.Model):
+    image = models.ImageField("Banner rasmi", upload_to='banner/', height_field=None, width_field=None, max_length=None)
+    title = models.TextField("Banner matni")
+
 
 class Contact(models.Model):
     name = models.CharField("F,I,SH",max_length=250)
