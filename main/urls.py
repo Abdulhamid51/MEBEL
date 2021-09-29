@@ -10,6 +10,6 @@ urlpatterns = [
     path("catalog/", views.CatalogView.as_view(), name="catalog"),
     path("profile/", views.ProfileView.as_view(), name="profile"),
     path("sigin/", views.RegisterctView.as_view(), name="sigin"),
-    path("contact/", views.ContactView.as_view(), name="contact"),
+    path("contact/", views.contact, name="contact"),
     path("wishlist/", views.WishlistView.as_view(), name="wishlist"),
 ]

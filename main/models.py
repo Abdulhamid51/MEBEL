@@ -35,4 +35,17 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.user
-    
+
+class Contact(models.Model):
+    name = models.CharField("F,I,SH",max_length=250)
+    email = models.EmailField('Elektron pochta',max_length=100,blank=True,null=True)
+    subject = models.CharField("Mavzu", max_length=50,blank=True,null=True)
+    phone = models.CharField("Telfon raqami",max_length=20)
+    message = models.TextField("Xabari")
+
+    class Meta:
+        verbose_name = "Aloqa"
+        verbose_name_plural = "Aloqalar"
+    def __str__ (self):
+        return f'{self.name}'
+
