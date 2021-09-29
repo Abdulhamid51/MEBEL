@@ -6,6 +6,15 @@ from.models import *
 
 class HomeView(View):
     def get(self,request):
+<<<<<<< HEAD
+        # post = Product.objects.all()[:3].order_by('?')
+        # category = Category.objects.all().order_by('-id')
+        # context = {
+        #     'post':post,
+        #     'cat':category
+        # }
+        return render(request,'index-2.html', )
+=======
         post = Product.objects.all().order_by('?')[:8]
         category = Category.objects.all().order_by('-id')
         context = {
@@ -13,6 +22,7 @@ class HomeView(View):
             'cat':category
         }
         return render(request,'index-2.html', context)
+>>>>>>> d1c71b95d6d9bb04390e0168f8bfa7a0597a564a
 
 def detail_product(request, link):
     product = get_object_or_404(Product, link=link)
@@ -61,3 +71,18 @@ def contact(request):
 class ProfileView(View):
     def get(self,request):
         return render(request,'client-profile.html')
+
+
+def search(request):
+	q = request.GET.get('search', None)
+	product = Product.objects.filter(title__icontains=q)
+	# posts = Post.objects.filter(title__icontains=q)
+	total_results = len(product) 
+	query = request.GET['search']
+	context = {
+		'product':product,
+		'posts':posts,
+		'total_results':total_results,
+		'query':query
+	}
+	return render(request, 'search-result.html', context)
