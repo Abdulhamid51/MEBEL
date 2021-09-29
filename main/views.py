@@ -6,7 +6,13 @@ from.models import *
 
 class HomeView(View):
     def get(self,request):
-        return render(request,'index-2.html')
+        post = Product.objects.all()[:3].order_by('?')
+        category = Category.objects.all().order_by('-id')
+        context = {
+            'post':post,
+            'cat':category
+        }
+        return render(request,'index-2.html', context)
 
 class CatalogView(View):
     def get(self,request):
