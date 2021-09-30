@@ -12,9 +12,6 @@ urlpatterns = [
     path("sigin/", views.RegisterctView.as_view(), name="sigin"),
     path("contact/", views.contact, name="contact"),
     path("wishlist/", views.WishlistView.as_view(), name="wishlist"),
-<<<<<<< HEAD
     path('search/', views.search, name='search'),
-=======
-    path("product/<link>", views.detail_product, name="detail_product")
->>>>>>> d1c71b95d6d9bb04390e0168f8bfa7a0597a564a
+    path("product/<link>", views.detail_product, name="detail_product"),
 ]
