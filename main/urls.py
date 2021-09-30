@@ -13,5 +13,5 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("wishlist/", views.WishlistView.as_view(), name="wishlist"),
     path('search/', views.search, name='search'),
-    path("product/<link>", views.detail_product, name="detail_product"),
+    path("product/<link>", views.detail_product, name="detail_product")
 ]

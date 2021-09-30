@@ -62,7 +62,6 @@ class ProfileView(View):
     def get(self,request):
         return render(request,'client-profile.html')
 
-
 def search(request):
 	q = request.GET.get('search', None)
 	product = Product.objects.filter(title__icontains=q)
