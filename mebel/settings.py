@@ -84,6 +84,18 @@ DATABASES = {
 }
 
 
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+LOGIN_URL = '/accounts/login/'# kirish uchun
+LOGIN_REDIRECT_URL = '/accounts/profile' #kirish amalga oshganda
+
+LOGOUT_URL = '/accounts/logout/'
+LOGOUT_REDIRECT_URL = '/accounts/login/' #chqish amalga oshganda
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 

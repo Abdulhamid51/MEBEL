@@ -28,6 +28,7 @@ class Product(models.Model):
     for_slider = models.BooleanField("birinchiga")
     for_duel = models.BooleanField("ikkitalikga")
     for_big = models.BooleanField("kattaga")
+    status = models.BooleanField("aktiv / noaktiv ",default=False)
 
     def __str__(self):
         return self.title
