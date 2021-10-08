@@ -4,6 +4,7 @@ from django.db import models
 
 class Category(models.Model):
     title = models.CharField("nomi", max_length=150)
+    image = models.ImageField('image', upload_to='category_images/')
     slug = models.SlugField("slug")
 
     def __str__(self):
@@ -27,6 +28,7 @@ class Product(models.Model):
     for_slider = models.BooleanField("birinchiga")
     for_duel = models.BooleanField("ikkitalikga")
     for_big = models.BooleanField("kattaga")
+    status = models.BooleanField("aktiv / noaktiv ",default=False)
 
     def __str__(self):
         return self.title
