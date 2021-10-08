@@ -6,6 +6,7 @@ from.models import *
 
 class HomeView(View):
     def get(self,request):
+        
         return render(request,'index-2.html')
 
 class CatalogView(View):
