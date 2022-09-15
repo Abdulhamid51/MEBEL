@@ -1,4 +1,4 @@
-vlibs/
+venv/
 __pycache__/
 migrations/
 media/
