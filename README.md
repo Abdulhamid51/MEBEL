@@ -1,2 +1,0 @@
-# MEBEL
-for technoways
