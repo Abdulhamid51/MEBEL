@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from main.models import Product, Categories, MaterialTypes
+from main.models import Product, Categories, MaterialTypes, Reviews
+from .accounts import UserSerializer
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
@@ -22,4 +23,18 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
+        fields = '__all__'
+
+
+class ReviewsSerializer(serializers.ModelSerializer):
+    user = UserSerializer(many=False)
+
+    class Meta:
+        model = Reviews
+        fields = '__all__'
+
+class ReviewSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Reviews
         fields = '__all__'

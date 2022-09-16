@@ -19,6 +19,8 @@ class Profile(models.Model):
     avatar_img = models.FileField(upload_to='avatars/',blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
 
+    uid = models.IntegerField(blank=True, null=True)
+
     def __str__(self):
         return self.user.username
 

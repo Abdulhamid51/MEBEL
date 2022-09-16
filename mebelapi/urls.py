@@ -25,7 +25,6 @@ schema_view = get_swagger_view(title='Shop API')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('api.urls')),
-    path('api/v1/accounts/', include('dj_rest_auth.urls')),
     path(r'api-docs/', schema_view),
 ]
 
