@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView, \
     RetrieveAPIView, ListCreateAPIView, \
-    CreateAPIView
+    CreateAPIView, GenericAPIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -25,8 +25,7 @@ class LoginApiView(APIView):
         user = User.objects.get(username=username)
         user.profile.uid = code
         user.profile.save()
-        print(code)
-        return Response({"code":"code sent"})
+        return Response({"code":code})
 
     def post(self, request):
         username = request.data['username']
@@ -38,8 +37,6 @@ class LoginApiView(APIView):
         if uid == code:
             return Response({"key":key})
         else:
-            user.profile.uid = None
-            user.profile.save()
             return Response({"error":"code incorrect"})
     
 
@@ -56,8 +53,7 @@ class RegisterApiView(APIView):
         Token.objects.create(user=user)
         user.profile.uid = code
         user.profile.save()
-        print(code)
-        return Response({"code":"code sent", "username":username})
+        return Response({"code":code, "username":username})
 
     def post(self, request):
         username = request.data['username']
@@ -69,6 +65,4 @@ class RegisterApiView(APIView):
         if uid == code:
             return Response({"key":key})
         else:
-            user.profile.uid = None
-            user.profile.save()
             return Response({"error":"code incorrect"})
